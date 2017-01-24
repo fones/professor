@@ -41,7 +41,7 @@ for filename in ('professor.cfg', 'private.cfg'):
 
 import pymongo
 dbname = app.config.get('MONGODB_CONFIG', {}).pop('db', 'professor')
-conn = pymongo.Connection(**app.config.get('MONGODB_CONFIG', {}))
+conn = pymongo.MongoClient(**app.config.get('MONGODB_CONFIG', {}))
 db = conn[dbname]
 
 app.session_store = MongoSessionStore(db.session)

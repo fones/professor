@@ -26,6 +26,7 @@
 __all__ = ('skeleton', 'sanitize')
 
 from bson.binary import Binary
+from bson.int64 import Int64
 from bson.code import Code
 from bson.dbref import DBRef
 from bson.errors import InvalidDocument
@@ -36,6 +37,7 @@ import re
 
 BSON_TYPES = set([
     int,
+    Int64,
     long,
     str,
     unicode,
